@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="mn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Захиалга — Ember&amp;Bean</title>
+<meta name="description" content="Ember&amp;Bean кофены захиалга: хүргэлт, төлбөрийн хэлбэрээ сонгоорой.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#281d17">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23281d17'/%3E%3Cpath d='M16 6l8 10-8 10-8-10z' fill='%23c4573a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair:wght@600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="top">ROASTED WITH FIRE. BREWED WITH CARE.</div>
+<header class="site-head" id="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">◆</span>Ember&amp;Bean</a>
+    <nav class="nav-links" aria-label="Үндсэн цэс">
+      <a class="menu" href="index.html#shop">Бүтээгдэхүүн</a>
+      <a class="menu" href="index.html#brew">Бэлтгэх</a>
+      <a class="menu" href="index.html#maker">Үйлдвэрлэгч</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap order-page" id="main">
+  <a class="back" href="index.html#shop">← Дэлгүүр рүү буцах</a>
+  <h1 id="page-title">Захиалга</h1>
+  <p class="lead" id="page-lead">Мэдээллээ бөглөөд захиалгаа илгээнэ үү. Бид утсаар холбогдож баталгаажуулна.</p>
+
+  <!-- Shown when the cart is empty -->
+  <section class="panel" id="empty" hidden>
+    <h2>Сагс хоосон байна</h2>
+    <p>Захиалга хийхийн тулд эхлээд кофегоо сонгоно уу.</p>
+    <a class="cta" href="index.html#shop">Кофе сонгох <span aria-hidden="true">→</span></a>
+  </section>
+
+  <!-- Checkout form -->
+  <form class="order-grid" id="order-form" novalidate hidden>
+    <div>
+      <fieldset class="panel">
+        <legend>Холбоо барих</legend>
+        <div class="field">
+          <label for="name">Нэр <span class="req">*</span></label>
+          <input type="text" id="name" name="name" autocomplete="name" required maxlength="80">
+        </div>
+        <div class="two">
+          <div class="field">
+            <label for="phone">Утас <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="numeric" required maxlength="12" placeholder="9911 2233">
+            <small>8 оронтой дугаар</small>
+          </div>
+          <div class="field">
+            <label for="phone2">Нэмэлт утас</label>
+            <input type="tel" id="phone2" name="phone2" inputmode="numeric" maxlength="12">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="panel">
+        <legend>Хүлээн авах</legend>
+        <div class="choices" style="margin-bottom:18px">
+          <label class="choice"><input type="radio" name="delivery" value="delivery" checked><div><b>Хүргэлтээр</b><span>Улаанбаатар хот дотор. Хүргэлтийн үнэ, цагийг утсаар тохирно.</span></div></label>
+          <label class="choice"><input type="radio" name="delivery" value="pickup"><div><b>Очиж авах</b><span>Авах байршил, цагийг утсаар мэдэгдэнэ.</span></div></label>
+        </div>
+        <div id="address-fields">
+          <div class="two">
+            <div class="field">
+              <label for="district">Дүүрэг <span class="req">*</span></label>
+              <select id="district" name="district" required>
+                <option value="">Сонгох</option>
+                <option>Баянгол</option><option>Баянзүрх</option><option>Сонгинохайрхан</option><option>Сүхбаатар</option>
+                <option>Хан-Уул</option><option>Чингэлтэй</option><option>Налайх</option><option>Багануур</option><option>Багахангай</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="khoroo">Хороо</label>
+              <input type="text" id="khoroo" name="khoroo" maxlength="20" placeholder="Жишээ: 3-р хороо">
+            </div>
+          </div>
+          <div class="field">
+            <label for="address">Дэлгэрэнгүй хаяг <span class="req">*</span></label>
+            <textarea id="address" name="address" maxlength="300" required placeholder="Байр, орц, давхар, тоот, орцны код"></textarea>
+          </div>
+        </div>
+        <div class="field" style="margin-bottom:0">
+          <label for="note">Нэмэлт тайлбар</label>
+          <textarea id="note" name="note" maxlength="300" placeholder="Хүргэлтийн тохиромжтой цаг гэх мэт"></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset class="panel">
+        <legend>Төлбөр</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="payment" value="transfer" checked><div><b>Дансаар шилжүүлэх</b><span>Захиалгын дараа дансны мэдээлэл, гүйлгээний утгыг харуулна.</span></div></label>
+          <label class="choice"><input type="radio" name="payment" value="cash"><div><b id="cash-title">Хүргэлтээр бэлнээр</b><span id="cash-text">Хүргэлтийн ажилтанд бэлнээр эсвэл картаар төлнө.</span></div></label>
+          <label class="choice disabled"><input type="radio" name="payment" value="qpay" disabled><div><b>QPay <span class="soon">Удахгүй</span></b><span>QPay-ээр төлөх боломж удахгүй нээгдэнэ.</span></div></label>
+        </div>
+      </fieldset>
+      <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+    </div>
+
+    <aside class="sticky">
+      <section class="panel">
+        <h2>Таны захиалга</h2>
+        <div id="summary"></div>
+        <div class="totals">
+          <div><span>Бараа</span><span id="subtotal">0 ₮</span></div>
+          <div><span>Хүргэлт</span><span id="delivery-fee">Утсаар тохирно</span></div>
+          <div class="grand"><span>Нийт</span><span id="grand">0 ₮</span></div>
+        </div>
+      </section>
+      <section class="panel">
+        <p class="notice" id="offline-notice" hidden>Онлайн захиалга удахгүй нээгдэнэ. <span id="offline-phone"></span></p>
+        <p class="error" id="form-error" role="alert" hidden></p>
+        <button class="cta submit" type="submit" id="submit">Захиалга илгээх</button>
+        <p class="fine">Захиалга илгээснээр таны нэр, утас, хаягийг зөвхөн энэ захиалгыг хүргэхэд ашиглана.</p>
+      </section>
+    </aside>
+  </form>
+
+  <!-- Confirmation -->
+  <section class="done" id="done" hidden tabindex="-1">
+    <div class="check" aria-hidden="true">✓</div>
+    <h2 style="font:700 clamp(30px,4vw,44px)/1.1 var(--serif);margin:0 0 8px">Захиалга хүлээн авлаа</h2>
+    <p>Баярлалаа, <span id="done-name"></span>. Бид удахгүй <b id="done-phone"></b> дугаарт залгаж баталгаажуулна.</p>
+    <div>Захиалгын дугаар</div>
+    <div class="order-no" id="done-no"></div>
+    <div class="panel bank" id="done-bank" hidden>
+      <h2>Дансны мэдээлэл</h2>
+      <dl>
+        <dt>Банк</dt><dd id="bank-name"></dd>
+        <dt>Данс</dt><dd id="bank-account"></dd>
+        <dt>Хүлээн авагч</dt><dd id="bank-holder"></dd>
+        <dt>Дүн</dt><dd id="bank-amount"></dd>
+        <dt>Гүйлгээний утга</dt><dd id="bank-ref"></dd>
+      </dl>
+    </div>
+    <p id="done-pay"></p>
+    <a class="cta" href="index.html">Нүүр хуудас руу буцах</a>
+  </section>
+</main>
+
+<footer><div class="wrap"><a class="brand" href="index.html"><span class="mark" aria-hidden="true">◆</span>Ember&amp;Bean</a><small>Roasted with fire. Brewed with care.</small></div></footer>
+
+<script src="shop.js"></script>
+<script>
+const {CONFIG, money, photo, loadCart, saveCart, cartLines} = window.EB;
+const get = id => document.getElementById(id);
+const form = get('order-form');
+const quantities = loadCart();
+
+function renderSummary() {
+  const {lines, total} = cartLines(quantities);
+  if (!lines.length) {
+    form.hidden = true;
+    get('empty').hidden = false;
+    return;
+  }
+  get('summary').innerHTML = lines.map(({coffee, quantity, subtotal}) => `<div class="summary-line">
+      <img src="${photo(coffee)}" width="44" height="66" alt="">
+      <div><strong>${coffee.name}</strong><br><small>${money(coffee.price)} × ${quantity}</small><div>${money(subtotal)}</div></div>
+      <div class="stepper"><button class="icon" type="button" data-id="${coffee.id}" data-change="-1" aria-label="${coffee.name} тоо бууруулах">−</button><span>${quantity}</span><button class="icon" type="button" data-id="${coffee.id}" data-change="1" aria-label="${coffee.name} тоо нэмэх">+</button></div>
+    </div>`).join('');
+  get('subtotal').textContent = money(total);
+  get('grand').textContent = money(total);
+}
+
+get('summary').addEventListener('click', event => {
+  const button = event.target.closest('[data-change]');
+  if (!button) return;
+  const {id, change} = button.dataset;
+  const quantity = Math.min(99, (quantities.get(id) || 0) + Number(change));
+  if (quantity > 0) quantities.set(id, quantity); else quantities.delete(id);
+  saveCart(quantities);
+  renderSummary();
+  const replacement = get('summary').querySelector(`[data-id="${id}"][data-change="${change}"]`);
+  if (replacement) replacement.focus();
+});
+
+/* Delivery vs pickup toggles the address block and the cash wording */
+function syncDelivery() {
+  const pickup = form.delivery.value === 'pickup';
+  get('address-fields').hidden = pickup;
+  get('district').required = !pickup;
+  get('address').required = !pickup;
+  get('delivery-fee').textContent = pickup ? '0 ₮' : 'Утсаар тохирно';
+  get('cash-title').textContent = pickup ? 'Авахдаа бэлнээр' : 'Хүргэлтээр бэлнээр';
+  get('cash-text').textContent = pickup ? 'Захиалгаа авахдаа бэлнээр эсвэл картаар төлнө.' : 'Хүргэлтийн ажилтанд бэлнээр эсвэл картаар төлнө.';
+}
+form.addEventListener('change', event => { if (event.target.name === 'delivery') syncDelivery(); });
+
+/* Validation */
+const digits = value => value.replace(/\D/g, '');
+function fieldError(input, message) {
+  input.setAttribute('aria-invalid', message ? 'true' : 'false');
+  let note = input.parentElement.querySelector('.error');
+  if (message) {
+    if (!note) { note = document.createElement('span'); note.className = 'error'; note.id = input.id + '-error'; input.parentElement.append(note); }
+    note.textContent = message;
+    input.setAttribute('aria-describedby', note.id);
+  } else if (note) {
+    note.remove();
+    input.removeAttribute('aria-describedby');
+  }
+  return !message;
+}
+function validate() {
+  const checks = [
+    fieldError(get('name'), get('name').value.trim().length < 2 ? 'Нэрээ оруулна уу.' : ''),
+    fieldError(get('phone'), digits(get('phone').value).length !== 8 ? '8 оронтой утасны дугаар оруулна уу.' : ''),
+    fieldError(get('phone2'), get('phone2').value && digits(get('phone2').value).length !== 8 ? '8 оронтой дугаар оруулна уу.' : '')
+  ];
+  if (form.delivery.value === 'delivery') {
+    checks.push(fieldError(get('district'), get('district').value ? '' : 'Дүүргээ сонгоно уу.'));
+    checks.push(fieldError(get('address'), get('address').value.trim().length < 5 ? 'Хаягаа дэлгэрэнгүй бичнэ үү.' : ''));
+  } else {
+    fieldError(get('district'), ''); fieldError(get('address'), '');
+  }
+  const firstBad = form.querySelector('[aria-invalid=true]');
+  if (firstBad) firstBad.focus();
+  return checks.every(Boolean);
+}
+form.addEventListener('input', event => { if (event.target.getAttribute('aria-invalid') === 'true') fieldError(event.target, ''); });
+
+function makeOrderNumber() {
+  const d = new Date();
+  const ymd = String(d.getFullYear()).slice(2) + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
+  const rand = Math.random().toString(36).slice(2, 6).toUpperCase().padEnd(4, '0');
+  return `EB${ymd}-${rand}`;
+}
+
+const PAYMENT_LABEL = {transfer: 'Дансаар шилжүүлэх', cash: 'Бэлнээр / картаар', qpay: 'QPay'};
+
+form.addEventListener('submit', async event => {
+  event.preventDefault();
+  const error = get('form-error');
+  error.hidden = true;
+  if (!CONFIG.ORDER_ENDPOINT) return;
+  if (form.website.value) return; // bot filled the hidden field
+  if (!validate()) return;
+
+  const {lines, total} = cartLines(quantities);
+  if (!lines.length) return renderSummary();
+  const pickup = form.delivery.value === 'pickup';
+  const order = {
+    orderId: makeOrderNumber(),
+    name: get('name').value.trim(),
+    phone: digits(get('phone').value),
+    phone2: digits(get('phone2').value),
+    delivery: pickup ? 'Очиж авах' : 'Хүргэлт',
+    district: pickup ? '' : get('district').value,
+    khoroo: pickup ? '' : get('khoroo').value.trim(),
+    address: pickup ? '' : get('address').value.trim(),
+    note: get('note').value.trim(),
+    payment: PAYMENT_LABEL[form.payment.value],
+    items: lines.map(({coffee, quantity}) => ({id: coffee.id, name: coffee.name, quantity})),
+    total
+  };
+
+  const button = get('submit');
+  button.disabled = true;
+  button.textContent = 'Илгээж байна…';
+  try {
+    // text/plain keeps this a "simple" request, so Apps Script needs no CORS preflight
+    const response = await fetch(CONFIG.ORDER_ENDPOINT, {method: 'POST', body: JSON.stringify(order)});
+    const result = await response.json();
+    if (!result.ok) throw new Error(result.error || 'failed');
+    showDone(order, result.total ?? total, form.payment.value);
+  } catch (err) {
+    error.textContent = 'Захиалга илгээхэд алдаа гарлаа. Интернэт холболтоо шалгаад дахин оролдоно уу.' + (CONFIG.PHONE ? ` Эсвэл ${CONFIG.PHONE} дугаарт залгана уу.` : '');
+    error.hidden = false;
+    button.disabled = false;
+    button.textContent = 'Захиалга илгээх';
+  }
+});
+
+function showDone(order, total, payment) {
+  quantities.clear();
+  saveCart(quantities);
+  form.hidden = true;
+  get('page-title').hidden = true;
+  get('page-lead').hidden = true;
+  get('done-name').textContent = order.name;
+  get('done-phone').textContent = order.phone;
+  get('done-no').textContent = order.orderId;
+  const {bank, account, holder} = CONFIG.BANK;
+  if (payment === 'transfer' && account) {
+    get('bank-name').textContent = bank;
+    get('bank-account').textContent = account;
+    get('bank-holder').textContent = holder;
+    get('bank-amount').textContent = money(total) + (order.delivery === 'Хүргэлт' ? ' + хүргэлт' : '');
+    get('bank-ref').textContent = `${order.orderId} ${order.phone}`;
+    get('done-bank').hidden = false;
+    get('done-pay').textContent = 'Гүйлгээний утга дээр захиалгын дугаар, утсаа заавал бичээрэй.';
+  } else if (payment === 'transfer') {
+    get('done-pay').textContent = 'Дансны мэдээллийг баталгаажуулах үед утсаар хэлж өгнө.';
+  } else {
+    get('done-pay').textContent = order.delivery === 'Хүргэлт' ? 'Хүргэлтийн ажилтанд бэлнээр эсвэл картаар төлнө.' : 'Захиалгаа авахдаа бэлнээр эсвэл картаар төлнө.';
+  }
+  get('done').hidden = false;
+  get('done').focus();
+  scrollTo(0, 0);
+}
+
+// Header shadow once the page scrolls
+const head = get('site-head');
+addEventListener('scroll', () => head.classList.toggle('scrolled', scrollY > 40), {passive: true});
+
+if (!CONFIG.ORDER_ENDPOINT) {
+  get('offline-notice').hidden = false;
+  if (CONFIG.PHONE) get('offline-phone').textContent = `Одоогоор ${CONFIG.PHONE} дугаарт залгаж захиална уу.`;
+  get('submit').disabled = true;
+}
+form.hidden = false;
+syncDelivery();
+renderSummary();
+</script>
+</body>
+</html>
