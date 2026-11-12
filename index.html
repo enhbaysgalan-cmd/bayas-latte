@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bayas latte — Кофены дэлгүүр</title>
-<meta name="description" content="Bayas latte — карамель, шоколад, самрын амттай YANYI® эспрессо кофены үр. Дунд бараан болон бараан хууралт.">
+<title>Ember&amp;Bean — Кофены дэлгүүр</title>
+<meta name="description" content="Ember&amp;Bean — Roasted with fire. Brewed with care. Карамель, шоколад, самрын амттай эспрессо кофены үр. Дунд бараан болон бараан хууралт.">
 <meta name="theme-color" content="#281d17">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="mn_MN">
-<meta property="og:site_name" content="Bayas latte">
-<meta property="og:title" content="Bayas latte — Өдрийг амттай эхлүүл">
+<meta property="og:site_name" content="Ember&amp;Bean">
+<meta property="og:title" content="Ember&amp;Bean — Roasted with fire. Brewed with care.">
 <meta property="og:description" content="Карамель, шоколад, самрын амттай эспрессо кофеноос өөрт тохирох хууралтаа сонгоорой.">
-<meta property="og:image" content="coffee-pour.jpg">
+<meta property="og:image" content="img/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23281d17'/%3E%3Cpath d='M16 6l8 10-8 10-8-10z' fill='%23c4573a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic">
-<link rel="preload" as="image" href="coffee-pour.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high">
 <style>
 :root{
   --ink:#281d17;--ink-soft:#604b40;--muted:#755744;--paper:#f8f3e8;--card:#fffaf0;
@@ -153,6 +153,8 @@ dialog[open]::backdrop{animation:fade .3s ease}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{border:1px solid var(--line);background:var(--card);padding:6px 12px;font-size:13px;font-weight:700}
 .series{background:var(--card);border-block:1px solid var(--line)}
+.series .photo{aspect-ratio:4/3}
+.series .photo img{object-position:center 45%}
 .brew{background:var(--ink);color:#f8edda}
 .brew .eyebrow{color:#e08a6c}
 .brew .lead{color:#d5c2ae}
@@ -173,7 +175,7 @@ dialog[open]::backdrop{animation:fade .3s ease}
 .maker{background:var(--sand)}
 .maker-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:30px}
 .maker-head .lead{margin:0}
-.maker .photo.wide{aspect-ratio:1000/586}
+.maker .photo.wide{aspect-ratio:923/630;max-height:620px;width:100%}
 .figures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:34px 0}
 .figure{border-top:2px solid var(--ink);padding-top:14px}
 .figure b{display:block;font:700 clamp(30px,3.4vw,44px)/1 var(--serif);font-variant-numeric:tabular-nums}
@@ -224,18 +226,18 @@ dialog[open]::backdrop{animation:fade .3s ease}
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ItemList","name":"Bayas latte — Кофены сонголт","itemListElement":[
-{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"YANYI Sweet Flame Lava","image":"img/sweet-flame-lava.jpg","description":"Какаоны өтгөн амт, чихэрлэг карамель хосолсон үнэрлэг эспрессо.","brand":{"@type":"Brand","name":"YANYI"},"offers":{"@type":"Offer","price":"38900","priceCurrency":"MNT"}}},
-{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"YANYI Dark Surge Chocolate","image":"img/dark-surge-chocolate.jpg","description":"Самрын өтгөн амт, зөөлөн торгомсог крематай, хүчиллэг багатай эспрессо.","brand":{"@type":"Brand","name":"YANYI"},"offers":{"@type":"Offer","price":"42900","priceCurrency":"MNT"}}},
-{"@type":"ListItem","position":3,"item":{"@type":"Product","name":"YANYI Black Gold Flame","image":"img/black-gold-flame.jpg","description":"Хүчтэй, өтгөн биетэй бөгөөд исгэлэн амт мэдрэгдэхгүй эспрессо.","brand":{"@type":"Brand","name":"YANYI"},"offers":{"@type":"Offer","price":"35900","priceCurrency":"MNT"}}}
+{"@context":"https://schema.org","@type":"ItemList","name":"Ember&Bean — Кофены сонголт","itemListElement":[
+{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"Ember&Bean Sweet Flame Lava","image":"img/sweet-flame-lava.jpg","description":"Какаоны өтгөн амт, чихэрлэг карамель хосолсон үнэрлэг эспрессо.","brand":{"@type":"Brand","name":"Ember&Bean"},"offers":{"@type":"Offer","price":"38900","priceCurrency":"MNT"}}},
+{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"Ember&Bean Dark Surge Chocolate","image":"img/dark-surge-chocolate.jpg","description":"Самрын өтгөн амт, зөөлөн торгомсог крематай, хүчиллэг багатай эспрессо.","brand":{"@type":"Brand","name":"Ember&Bean"},"offers":{"@type":"Offer","price":"42900","priceCurrency":"MNT"}}},
+{"@type":"ListItem","position":3,"item":{"@type":"Product","name":"Ember&Bean Black Gold Flame","image":"img/black-gold-flame.jpg","description":"Хүчтэй, өтгөн биетэй бөгөөд исгэлэн амт мэдрэгдэхгүй эспрессо.","brand":{"@type":"Brand","name":"Ember&Bean"},"offers":{"@type":"Offer","price":"35900","priceCurrency":"MNT"}}}
 ]}
 </script>
 </head>
 <body>
-<div class="top">ЭСПРЕССО КОФЕНЫ ХОЛИМОГ</div>
+<div class="top">ROASTED WITH FIRE. BREWED WITH CARE.</div>
 <header class="site-head" id="site-head">
   <div class="wrap nav">
-    <a class="brand" href="#"><span class="mark" aria-hidden="true">◆</span>Bayas latte</a>
+    <a class="brand" href="#"><span class="mark" aria-hidden="true">◆</span>Ember&amp;Bean</a>
     <nav class="nav-links" aria-label="Үндсэн цэс">
       <a class="menu" href="#shop">Бүтээгдэхүүн</a>
       <a class="menu" href="#brew">Бэлтгэх</a>
@@ -247,7 +249,7 @@ dialog[open]::backdrop{animation:fade .3s ease}
 <main>
 <section class="wrap hero" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <p class="eyebrow">Bayas latte</p>
+    <p class="eyebrow">Ember&amp;Bean · Эспрессо кофены холимог</p>
     <h1 id="hero-title">Өдрийг <em>амттай</em> эхлүүл.</h1>
     <p>Карамель, шоколад, самрын амттай эспрессо кофеноос өөрт тохирох хууралтаа сонгоорой.</p>
     <a class="cta" href="#shop">Кофе сонгох <span aria-hidden="true">→</span></a>
@@ -257,12 +259,12 @@ dialog[open]::backdrop{animation:fade .3s ease}
       <li>500 г / 1 кг савлагаа</li>
     </ul>
   </div>
-  <figure class="hero-photo"><img src="coffee-pour.jpg" width="366" height="546" alt="Кофены үрэн дээр тавьсан цагаан аяганд кофе хийж буй нь" fetchpriority="high" decoding="async"></figure>
+  <figure class="hero-photo"><img src="img/hero.jpg" width="1150" height="716" alt="Эспрессо машинаас сүүтэй шилэн аяганд эспрессо урсаж буй нь" fetchpriority="high" decoding="async"></figure>
 </section>
 <section class="shop-backdrop" id="shop" aria-labelledby="shop-title">
   <div class="wrap shop">
     <div class="shop-head">
-      <div><p class="eyebrow">YANYI® ЭСПРЕССО</p><h2 id="shop-title">Кофены сонголт</h2></div>
+      <div><p class="eyebrow">Ember&amp;Bean ЭСПРЕССО</p><h2 id="shop-title">Кофены сонголт</h2></div>
       <div class="filters" role="group" aria-label="Хууралтаар шүүх">
         <button class="filter" type="button" data-kind="all" aria-pressed="true">Бүгд</button>
         <button class="filter" type="button" data-kind="medium-dark" aria-pressed="false">Дунд бараан</button>
@@ -275,9 +277,9 @@ dialog[open]::backdrop{animation:fade .3s ease}
 
 <section class="section series" id="series" aria-labelledby="series-title">
   <div class="wrap split">
-    <figure class="photo"><img src="img/series.jpg" width="1000" height="867" alt="COMENG Yanyi® цувралын гурван төрлийн кофены савлагаа, латте арттай аяга" loading="lazy" decoding="async"></figure>
+    <figure class="photo"><img src="coffee-pour.jpg" width="366" height="546" alt="Кофены үрэн дээр тавьсан цагаан аяганд кофе хийж буй нь" loading="lazy" decoding="async"></figure>
     <div>
-      <p class="eyebrow">Yanyi® · Итали эспрессо холимог</p>
+      <p class="eyebrow">Итали эспрессо холимог</p>
       <h2 id="series-title">«Крема хаан» цуврал</h2>
       <p class="lead">Үр бүрийг хуурах муруйг нарийн хянаж хуурдаг тул өтгөн крема, тэнцвэртэй амт гарна. Энгийн гашуун биш, харин гүн хар шоколадны үнэр, тод карамелийн амтлаг, хуурсан самрын зөөлөн амттай. Амны үлдэц нь урт бөгөөд цэвэр.</p>
       <ul class="ticks">
@@ -331,11 +333,11 @@ dialog[open]::backdrop{animation:fade .3s ease}
     <div class="maker-head">
       <div>
         <p class="eyebrow">Үйлдвэрлэгч</p>
-        <h2 id="maker-title">COMENG кофе · Юньнань</h2>
+        <h2 id="maker-title">Юньнаньд үйлдвэрлэв</h2>
       </div>
-      <p class="lead">COMENG (咖蒙咖啡) нь Хятадын кофе тариалангийн гол бүс болох Юньнань мужийн Баошань хотод өөрийн үйлдвэртэй. Тариалангаас хууралт хүртэлх бүх үе шатыг өөрсдөө хянадаг.</p>
+      <p class="lead">Ember&amp;Bean кофе нь Хятадын кофе тариалангийн гол бүс болох Юньнань мужийн Баошань дахь олон улсын стандартын түнш үйлдвэрт манай жороор үйлдвэрлэгддэг. Жимс түүхээс хууралт хүртэлх бүх үе шат чанарын хяналттай.</p>
     </div>
-    <figure class="photo wide"><img src="img/factory.jpg" width="1000" height="586" alt="Юньнань мужийн Баошань дахь COMENG кофены үйлдвэрийн цогцолбор, агаараас" loading="lazy" decoding="async"></figure>
+    <figure class="photo wide"><img src="img/factory.jpg" width="923" height="630" alt="Юньнань мужийн Баошань дахь кофены үйлдвэрийн цогцолбор, агаараас" loading="lazy" decoding="async"></figure>
     <div class="figures">
       <div class="figure"><b>12 жил</b><span>жор боловсруулсан туршлага</span></div>
       <div class="figure"><b>5000+</b><span>удаа жор тохируулж, мянга мянган удаа амталгаа хийсэн</span></div>
@@ -370,7 +372,7 @@ dialog[open]::backdrop{animation:fade .3s ease}
   </div>
 </section>
 </main>
-<footer><div class="wrap"><a class="brand" href="#"><span class="mark" aria-hidden="true">◆</span>Bayas latte</a><small>Үйлдвэрлэгч: COMENG кофе, Юньнань, Хятад · Жишээ үнэ</small></div></footer>
+<footer><div class="wrap"><a class="brand" href="#"><span class="mark" aria-hidden="true">◆</span>Ember&amp;Bean</a><small>Roasted with fire. Brewed with care. · Жишээ үнэ</small></div></footer>
 
 <dialog id="basket" aria-labelledby="basket-title">
   <div class="dialog-head"><h2 id="basket-title">Таны сагс</h2><form method="dialog"><button class="icon" aria-label="Сагс хаах">×</button></form></div>
@@ -425,10 +427,10 @@ function renderProducts(kind) {
   get('products').innerHTML = list.map((coffee, index) => `<article class="card${revealer ? ' reveal' : ''}" style="transition-delay:${index * 90}ms">
       <div class="product-art">
         <span class="badge">${coffee.kind === 'dark' ? 'Бараан' : 'Дунд бараан'}</span>
-        <img src="${photo(coffee)}" width="360" height="540" alt="YANYI ${coffee.name} кофены савлагаа" loading="lazy" decoding="async">
+        <img src="${photo(coffee)}" width="360" height="540" alt="${coffee.name} кофены савлагаа" loading="lazy" decoding="async">
       </div>
       <div class="card-body">
-        <span class="meta">YANYI® · ${coffee.roast}</span>
+        <span class="meta">Ember&amp;Bean · ${coffee.roast}</span>
         <h3>${coffee.name}</h3>
         <p class="card-description">${coffee.description}</p>
         <dl class="coffee-details">
