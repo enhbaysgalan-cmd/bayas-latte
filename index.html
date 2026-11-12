@@ -16,14 +16,14 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23281d17'/%3E%3Cpath d='M16 6l8 10-8 10-8-10z' fill='%23c4573a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
 <link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high">
 <style>
 :root{
   --ink:#281d17;--ink-soft:#604b40;--muted:#755744;--paper:#f8f3e8;--card:#fffaf0;
   --rust:#a63f26;--rust-dark:#85301d;--line:#dccfbd;--sand:#efe5d3;--focus:#2d6659;
   --serif:"Playfair Display","Times New Roman",Times,serif;
-  --sans:Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --sans:Arial,"Helvetica Neue",Helvetica,sans-serif;
   --ease:cubic-bezier(.2,.7,.2,1);
   --shadow:0 18px 40px -22px #3a231680;
 }
@@ -61,7 +61,7 @@ button,a{font:inherit}a{color:inherit}button{cursor:pointer}
 .hero h1 em{font-style:italic;color:var(--rust)}
 .hero p:not(.eyebrow){max-width:380px;margin:24px 0 30px;color:#594538;font-size:17px}
 .hero-photo{margin:0;min-height:300px;background:#4c3025;position:relative;overflow:hidden}
-.hero-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center 43%;animation:heroZoom 1.6s var(--ease) both}
+.hero-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:45% center;animation:heroZoom 1.6s var(--ease) both}
 @keyframes heroZoom{from{transform:scale(1.08);opacity:.4}to{transform:scale(1);opacity:1}}
 .hero-points{display:flex;gap:18px;flex-wrap:wrap;margin:34px 0 0;padding:0;list-style:none;font-size:13px;color:var(--muted)}
 .hero-points li::before{content:"◆";color:var(--rust);font-size:9px;margin-right:7px;vertical-align:2px}
@@ -259,7 +259,7 @@ dialog[open]::backdrop{animation:fade .3s ease}
       <li>500 г / 1 кг савлагаа</li>
     </ul>
   </div>
-  <figure class="hero-photo"><img src="img/hero.jpg" width="1150" height="716" alt="Эспрессо машинаас сүүтэй шилэн аяганд эспрессо урсаж буй нь" fetchpriority="high" decoding="async"></figure>
+  <figure class="hero-photo"><img src="img/hero.jpg" width="1600" height="895" alt="Бариста аяганд сүү цутгаж латте арт хийж буй нь" fetchpriority="high" decoding="async"></figure>
 </section>
 <section class="shop-backdrop" id="shop" aria-labelledby="shop-title">
   <div class="wrap shop">
