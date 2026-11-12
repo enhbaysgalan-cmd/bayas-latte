@@ -7,9 +7,9 @@
 // Prices are checked here so a changed price in the browser cannot lower the total.
 // Keep these in sync with shop.js.
 const PRICES = {
-  'sweet-flame-lava': { name: 'Sweet Flame Lava', price: 38900 },
-  'dark-surge-chocolate': { name: 'Dark Surge Chocolate', price: 42900 },
-  'black-gold-flame': { name: 'Black Gold Flame', price: 35900 }
+  'sweet-flame-lava': { name: 'Sweet Flame Lava', price: 77800 },
+  'dark-surge-chocolate': { name: 'Dark Surge Chocolate', price: 85800 },
+  'black-gold-flame': { name: 'Black Gold Flame', price: 71800 }
 };
 
 const SHEET_NAME = 'Захиалга';
