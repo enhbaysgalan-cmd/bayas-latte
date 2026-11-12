@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="mn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bayas latte — Кофены дэлгүүр</title>
+<meta name="description" content="Bayas latte — карамель, шоколад, самрын амттай YANYI® эспрессо кофены үр. Дунд бараан болон бараан хууралт.">
+<meta name="theme-color" content="#281d17">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="mn_MN">
+<meta property="og:site_name" content="Bayas latte">
+<meta property="og:title" content="Bayas latte — Өдрийг амттай эхлүүл">
+<meta property="og:description" content="Карамель, шоколад, самрын амттай эспрессо кофеноос өөрт тохирох хууралтаа сонгоорой.">
+<meta property="og:image" content="coffee-pour.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23281d17'/%3E%3Cpath d='M16 6l8 10-8 10-8-10z' fill='%23c4573a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic">
+<link rel="preload" as="image" href="coffee-pour.jpg" fetchpriority="high">
+<style>
+:root{
+  --ink:#281d17;--ink-soft:#604b40;--muted:#755744;--paper:#f8f3e8;--card:#fffaf0;
+  --rust:#a63f26;--rust-dark:#85301d;--line:#dccfbd;--sand:#efe5d3;--focus:#2d6659;
+  --serif:"Playfair Display","Times New Roman",Times,serif;
+  --sans:Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --shadow:0 18px 40px -22px #3a231680;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+button,a{font:inherit}a{color:inherit}button{cursor:pointer}
+:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.wrap{width:min(1240px,calc(100% - 72px));margin:auto}
+
+/* Top bar + sticky header */
+.top{background:var(--ink);color:#f8edda;text-align:center;padding:8px 16px;font-size:11px;font-weight:700;letter-spacing:.18em}
+.site-head{position:sticky;top:0;z-index:20;background:#f8f3e8e6;-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.site-head.scrolled{border-color:var(--line);box-shadow:0 6px 24px -18px #3a2316}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:12px}
+.brand{font:700 21px/1 var(--serif);letter-spacing:.02em;text-decoration:none;display:inline-flex;align-items:center}
+.mark{color:var(--rust);margin-right:9px;font-size:14px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.menu{font-size:14px;font-weight:500;text-decoration:none;position:relative}
+.menu::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.menu:hover::after{transform:scaleX(1)}
+.cart{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:30px;background:var(--card);color:inherit;padding:8px 10px 8px 16px;font-size:14px;font-weight:700;transition:border-color .2s,background .2s}
+.cart:hover{border-color:var(--ink)}
+.count{display:inline-grid;place-items:center;background:var(--ink);color:#fff;border-radius:50%;min-width:24px;height:24px;margin-left:8px;font-size:12px;font-variant-numeric:tabular-nums}
+.count.bump{animation:bump .45s var(--ease)}
+@keyframes bump{0%{transform:scale(1)}35%{transform:scale(1.35);background:var(--rust)}100%{transform:scale(1)}}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;min-height:520px;background:var(--sand);overflow:hidden;border-radius:2px}
+.hero-copy{padding:clamp(28px,6vw,88px);align-self:center}
+.eyebrow{color:var(--rust);font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin:0 0 16px}
+.hero h1,.shop h2,.dialog-head h2{font-family:var(--serif);font-weight:700;letter-spacing:-.02em;margin:0}
+.hero h1{font-size:clamp(46px,6.2vw,96px);line-height:1;max-width:600px}
+.hero h1 em{font-style:italic;color:var(--rust)}
+.hero p:not(.eyebrow){max-width:380px;margin:24px 0 30px;color:#594538;font-size:17px}
+.hero-photo{margin:0;min-height:300px;background:#4c3025;position:relative;overflow:hidden}
+.hero-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center 43%;animation:heroZoom 1.6s var(--ease) both}
+@keyframes heroZoom{from{transform:scale(1.08);opacity:.4}to{transform:scale(1);opacity:1}}
+.hero-points{display:flex;gap:18px;flex-wrap:wrap;margin:34px 0 0;padding:0;list-style:none;font-size:13px;color:var(--muted)}
+.hero-points li::before{content:"◆";color:var(--rust);font-size:9px;margin-right:7px;vertical-align:2px}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--rust);color:#fff;border:0;padding:14px 22px;text-decoration:none;font-weight:700;letter-spacing:.01em;transition:background .2s,transform .2s var(--ease)}
+.cta span{transition:transform .25s var(--ease)}
+.cta:hover{background:var(--rust-dark)}
+.cta:hover span{transform:translateX(4px)}
+
+/* Shop */
+.shop-backdrop{background:linear-gradient(180deg,var(--paper),transparent 140px),linear-gradient(100deg,#f8f3e8 7%,#f8f3e8ed 35%,#f8f3e895 75%),url("coffee-beans.jpg") center 60% / cover no-repeat}
+.shop{padding:72px 0 88px}
+.shop h2{font-size:clamp(38px,4.8vw,64px);line-height:1.02}
+.shop-head{display:flex;justify-content:space-between;align-items:end;gap:22px;flex-wrap:wrap;margin-bottom:30px}
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.filter{background:#fffaf0b3;border:1px solid var(--line);border-radius:30px;color:inherit;padding:8px 16px;font-size:14px;font-weight:500;transition:background .2s,color .2s,border-color .2s}
+.filter:hover{border-color:var(--ink)}
+.filter[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);background:var(--card);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#cdbba4}
+.product-art{height:280px;display:grid;place-items:center;background:#fff;border-bottom:1px solid var(--line);overflow:hidden;position:relative}
+.product-art img{width:160px;height:240px;object-fit:contain;transition:transform .5s var(--ease)}
+.card:hover .product-art img{transform:scale(1.05) rotate(-1deg)}
+.badge{position:absolute;top:14px;left:14px;background:var(--sand);color:var(--ink);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px}
+.card-body{display:flex;flex:1;flex-direction:column;padding:22px}
+.meta{color:var(--muted);font-size:13px}
+.card h3{font:700 26px/1.12 var(--serif);margin:6px 0 8px}
+.card-description{margin:0 0 16px;font-size:15px}
+.coffee-details{display:grid;gap:8px;margin:0 0 22px;font-size:14px;color:var(--ink-soft)}
+.coffee-details div{border-top:1px solid var(--line);padding-top:8px}
+.coffee-details dt{font-weight:700;color:var(--ink);font-size:13px}
+.coffee-details dd{margin:2px 0 0}
+.buy{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}
+.price{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums}
+.add{border:1px solid var(--ink);background:transparent;padding:9px 15px;color:inherit;font-weight:700;font-size:14px;min-width:118px;transition:background .2s,color .2s}
+.add:hover{background:var(--ink);color:#fff}
+.add.added{background:#2d6659;border-color:#2d6659;color:#fff}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* Footer */
+footer{background:var(--ink);color:#f5e8cd;padding:30px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+footer small{color:#d5c2ae}
+
+/* Cart drawer */
+dialog{width:min(460px,100%);max-width:100%;height:100%;max-height:100%;margin:0 0 0 auto;border:0;padding:26px;background:var(--paper);color:var(--ink);display:flex;flex-direction:column}
+dialog:not([open]){display:none}
+dialog[open]{animation:slideIn .35s var(--ease)}
+dialog::backdrop{background:#21160db0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+dialog[open]::backdrop{animation:fade .3s ease}
+@keyframes slideIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
+@keyframes fade{from{opacity:0}}
+.dialog-head,.sum,.row{display:flex;justify-content:space-between;align-items:center;gap:14px}
+.dialog-head{padding-bottom:12px;border-bottom:1px solid var(--line)}
+.dialog-head h2{font-size:32px}
+#basket-items{flex:1;overflow:auto}
+.icon{border:1px solid var(--line);background:transparent;color:inherit;min-width:36px;min-height:36px;font-size:18px;line-height:1;transition:border-color .2s,background .2s}
+.icon:hover{border-color:var(--ink);background:var(--card)}
+.row{padding:16px 0;border-bottom:1px solid var(--line)}
+.row-main{display:flex;align-items:center;gap:14px}
+.row img{width:48px;height:72px;object-fit:contain;background:#fff;border:1px solid var(--line)}
+.row small{color:var(--muted)}
+.stepper{display:flex;align-items:center;gap:10px;font-variant-numeric:tabular-nums}
+.stepper span{min-width:18px;text-align:center;font-weight:700}
+.sum{padding-top:20px;font-size:19px;border-top:1px solid var(--ink);margin-top:10px}
+.sum strong:last-child{font-variant-numeric:tabular-nums}
+.demo{font-size:13px;color:var(--ink-soft)}
+.empty{padding:48px 0;text-align:center;color:var(--muted)}
+.empty .cta{margin-top:14px}
+
+/* Toast */
+.toast{position:fixed;left:50%;bottom:24px;z-index:50;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--ink);color:#fff;padding:12px 18px;font-size:14px;font-weight:500;box-shadow:var(--shadow);transition:opacity .25s,transform .35s var(--ease);max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+@media(max-width:860px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+  .wrap{width:calc(100% - 32px)}
+  .hero{grid-template-columns:1fr}
+  .hero-copy{padding:36px 23px}
+  .hero-photo{order:-1;min-height:260px}
+  .shop{padding:50px 0 60px}
+  .nav{min-height:62px}
+  .shop-backdrop{background:linear-gradient(180deg,var(--paper),#f8f3e8e8 160px,#f8f3e8a3 70%),url("coffee-beans.jpg") center / cover no-repeat}
+}
+@media(max-width:560px){
+  .grid{grid-template-columns:1fr}
+  .menu{display:none}
+  .hero h1{font-size:44px}
+  dialog{padding:20px 16px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Bayas latte — Кофены сонголт","itemListElement":[
+{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"YANYI Sweet Flame Lava","image":"img/sweet-flame-lava.jpg","description":"Какаоны өтгөн амт, чихэрлэг карамель хосолсон үнэрлэг эспрессо.","brand":{"@type":"Brand","name":"YANYI"},"offers":{"@type":"Offer","price":"38900","priceCurrency":"MNT"}}},
+{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"YANYI Dark Surge Chocolate","image":"img/dark-surge-chocolate.jpg","description":"Самрын өтгөн амт, зөөлөн торгомсог крематай, хүчиллэг багатай эспрессо.","brand":{"@type":"Brand","name":"YANYI"},"offers":{"@type":"Offer","price":"42900","priceCurrency":"MNT"}}},
+{"@type":"ListItem","position":3,"item":{"@type":"Product","name":"YANYI Black Gold Flame","image":"img/black-gold-flame.jpg","description":"Хүчтэй, өтгөн биетэй бөгөөд исгэлэн амт мэдрэгдэхгүй эспрессо.","brand":{"@type":"Brand","name":"YANYI"},"offers":{"@type":"Offer","price":"35900","priceCurrency":"MNT"}}}
+]}
+</script>
+</head>
+<body>
+<div class="top">ЭСПРЕССО КОФЕНЫ ХОЛИМОГ</div>
+<header class="site-head" id="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="#"><span class="mark" aria-hidden="true">◆</span>Bayas latte</a>
+    <nav class="nav-links" aria-label="Үндсэн цэс">
+      <a class="menu" href="#shop">Бүтээгдэхүүн</a>
+      <button class="cart" id="open-cart" type="button" aria-haspopup="dialog">Сагс <span class="count" id="count">0</span></button>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="wrap hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="eyebrow">Bayas latte</p>
+    <h1 id="hero-title">Өдрийг <em>амттай</em> эхлүүл.</h1>
+    <p>Карамель, шоколад, самрын амттай эспрессо кофеноос өөрт тохирох хууралтаа сонгоорой.</p>
+    <a class="cta" href="#shop">Кофе сонгох <span aria-hidden="true">→</span></a>
+    <ul class="hero-points">
+      <li>Арабика + робуста</li>
+      <li>Эспрессод тохиромжтой</li>
+      <li>500 г савлагаа</li>
+    </ul>
+  </div>
+  <figure class="hero-photo"><img src="coffee-pour.jpg" width="366" height="546" alt="Кофены үрэн дээр тавьсан цагаан аяганд кофе хийж буй нь" fetchpriority="high" decoding="async"></figure>
+</section>
+<section class="shop-backdrop" id="shop" aria-labelledby="shop-title">
+  <div class="wrap shop">
+    <div class="shop-head">
+      <div><p class="eyebrow">YANYI® ЭСПРЕССО</p><h2 id="shop-title">Кофены сонголт</h2></div>
+      <div class="filters" role="group" aria-label="Хууралтаар шүүх">
+        <button class="filter" type="button" data-kind="all" aria-pressed="true">Бүгд</button>
+        <button class="filter" type="button" data-kind="medium-dark" aria-pressed="false">Дунд бараан</button>
+        <button class="filter" type="button" data-kind="dark" aria-pressed="false">Бараан</button>
+      </div>
+    </div>
+    <div class="grid" id="products"></div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><a class="brand" href="#"><span class="mark" aria-hidden="true">◆</span>Bayas latte</a><small>Дэлгүүрийн загвар · Жишээ үнэ</small></div></footer>
+
+<dialog id="basket" aria-labelledby="basket-title">
+  <div class="dialog-head"><h2 id="basket-title">Таны сагс</h2><form method="dialog"><button class="icon" aria-label="Сагс хаах">×</button></form></div>
+  <div id="basket-items"></div>
+  <div class="sum"><strong>Нийт</strong><strong id="total">0 ₮</strong></div>
+  <p class="demo">Туршилтын дэлгүүр. Захиалга болон төлбөрийн систем холбогдоогүй байна.</p>
+</dialog>
+<div class="toast" id="toast" aria-hidden="true"></div>
+<p id="status" class="sr" role="status"></p>
+
+<script>
+const coffees = [
+  {
+    id: 'sweet-flame-lava', name: 'Sweet Flame Lava', kind: 'medium-dark', roast: 'Дунд бараан хууралт',
+    description: 'Какаоны өтгөн амт, чихэрлэг карамель хосолсон үнэрлэг эспрессо.',
+    notes: 'Карамель, хуурсан самар, какао, зөгийн бал', price: 38900
+  },
+  {
+    id: 'dark-surge-chocolate', name: 'Dark Surge Chocolate', kind: 'dark', roast: 'Бараан хууралт',
+    description: 'Самрын өтгөн амт, зөөлөн торгомсог крематай, хүчиллэг багатай эспрессо.',
+    notes: 'Хар шоколад, карамель, хуурсан самар, цөцгий', price: 42900
+  },
+  {
+    id: 'black-gold-flame', name: 'Black Gold Flame', kind: 'dark', roast: 'Бараан хууралт',
+    description: 'Хүчтэй, өтгөн биетэй бөгөөд исгэлэн амт мэдрэгдэхгүй эспрессо.',
+    notes: 'Сүүн шоколад, цөцгийн тостой жигнэмэг, соёолжны сахар, галд шарсан кешью', price: 35900
+  }
+];
+const CART_KEY = 'khur-cart';
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const get = id => document.getElementById(id);
+const money = amount => new Intl.NumberFormat('mn-MN').format(amount) + ' ₮';
+const photo = coffee => `img/${coffee.id}.jpg`;
+const quantities = new Map();
+try {
+  const saved = JSON.parse(localStorage.getItem(CART_KEY) || '{}');
+  for (const coffee of coffees) {
+    const quantity = saved?.[coffee.id];
+    if (Number.isSafeInteger(quantity) && quantity > 0 && quantity <= 99) quantities.set(coffee.id, quantity);
+  }
+} catch {}
+
+/* Fade cards in as they scroll into view */
+const revealer = 'IntersectionObserver' in window && !reduceMotion
+  ? new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('in'); revealer.unobserve(entry.target); }
+    }), {rootMargin: '0px 0px -8% 0px'})
+  : null;
+
+function renderProducts(kind) {
+  const list = coffees.filter(coffee => kind === 'all' || coffee.kind === kind);
+  get('products').innerHTML = list.map((coffee, index) => `<article class="card${revealer ? ' reveal' : ''}" style="transition-delay:${index * 90}ms">
+      <div class="product-art">
+        <span class="badge">${coffee.kind === 'dark' ? 'Бараан' : 'Дунд бараан'}</span>
+        <img src="${photo(coffee)}" width="360" height="540" alt="YANYI ${coffee.name} кофены савлагаа" loading="lazy" decoding="async">
+      </div>
+      <div class="card-body">
+        <span class="meta">YANYI® · ${coffee.roast}</span>
+        <h3>${coffee.name}</h3>
+        <p class="card-description">${coffee.description}</p>
+        <dl class="coffee-details">
+          <div><dt>Амтын өнгө аяс</dt><dd>${coffee.notes}</dd></div>
+          <div><dt>Үрийн найрлага</dt><dd>Арабика ба спешиалти робуста</dd></div>
+          <div><dt>Боловсруулалт</dt><dd>Угааж, тавцан дээр хатаасан</dd></div>
+        </dl>
+        <div class="buy">
+          <div><span class="meta">Жишээ үнэ</span><br><span class="price">${money(coffee.price)}</span></div>
+          <button class="add" type="button" data-add="${coffee.id}" aria-label="${coffee.name} кофег сагсанд нэмэх">Нэмэх +</button>
+        </div>
+      </div>
+    </article>`).join('');
+  if (revealer) get('products').querySelectorAll('.reveal').forEach(card => revealer.observe(card));
+}
+
+function renderCart() {
+  let total = 0;
+  let count = 0;
+  const rows = [];
+  for (const coffee of coffees) {
+    const quantity = quantities.get(coffee.id) || 0;
+    if (!quantity) continue;
+    count += quantity;
+    total += quantity * coffee.price;
+    rows.push(`<div class="row">
+      <div class="row-main"><img src="${photo(coffee)}" width="48" height="72" alt=""><div><strong>${coffee.name}</strong><br><small>${money(coffee.price)} × ${quantity}</small><div>${money(coffee.price * quantity)}</div></div></div>
+      <div class="stepper"><button class="icon" type="button" data-id="${coffee.id}" data-change="-1" aria-label="${coffee.name} тоо бууруулах">−</button><span>${quantity}</span><button class="icon" type="button" data-id="${coffee.id}" data-change="1" aria-label="${coffee.name} тоо нэмэх">+</button></div>
+    </div>`);
+  }
+  get('basket-items').innerHTML = rows.join('') ||
+    '<div class="empty"><p>Сагс хоосон байна.</p><a class="cta" href="#shop" data-close>Кофе сонгох <span aria-hidden="true">→</span></a></div>';
+  get('count').textContent = count;
+  get('total').textContent = money(total);
+}
+
+function bumpCount() {
+  const badge = get('count');
+  badge.classList.remove('bump');
+  void badge.offsetWidth; // restart the animation
+  badge.classList.add('bump');
+}
+
+let toastTimer;
+function toast(message) {
+  const el = get('toast');
+  el.textContent = message;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2200);
+}
+
+function change(id, delta) {
+  const quantity = Math.min(99, (quantities.get(id) || 0) + delta);
+  if (quantity > 0) quantities.set(id, quantity);
+  else quantities.delete(id);
+  try { localStorage.setItem(CART_KEY, JSON.stringify(Object.fromEntries(quantities))); } catch {}
+  renderCart();
+  if (delta > 0) bumpCount();
+  get('status').textContent = coffees.find(coffee => coffee.id === id).name + ' · сагсанд ' + Math.max(0, quantity) + ' ширхэг';
+  return Math.max(0, quantity);
+}
+
+document.querySelector('.filters').addEventListener('click', event => {
+  const button = event.target.closest('[data-kind]');
+  if (!button) return;
+  document.querySelectorAll('[data-kind]').forEach(filter => filter.setAttribute('aria-pressed', filter === button));
+  renderProducts(button.dataset.kind);
+});
+
+get('products').addEventListener('click', event => {
+  const button = event.target.closest('[data-add]');
+  if (!button) return;
+  const coffee = coffees.find(c => c.id === button.dataset.add);
+  const quantity = change(coffee.id, 1);
+  toast(`${coffee.name} сагсанд нэмэгдлээ · ${quantity} ширхэг`);
+  button.classList.add('added');
+  button.textContent = 'Нэмэгдлээ ✓';
+  clearTimeout(button._reset);
+  button._reset = setTimeout(() => { button.classList.remove('added'); button.textContent = 'Нэмэх +'; }, 1400);
+});
+
+get('basket-items').addEventListener('click', event => {
+  if (event.target.closest('[data-close]')) { get('basket').close(); return; }
+  const button = event.target.closest('[data-change]');
+  if (!button) return;
+  const {id, change: delta} = button.dataset;
+  change(id, Number(delta));
+  const replacement = get('basket-items').querySelector('[data-id="' + id + '"][data-change="' + delta + '"]');
+  (replacement || get('basket').querySelector('form button')).focus();
+});
+
+const basket = get('basket');
+get('open-cart').addEventListener('click', () => basket.showModal());
+// Close the drawer when clicking the dimmed backdrop
+basket.addEventListener('click', event => { if (event.target === basket) basket.close(); });
+
+// Header shadow once the page scrolls
+const head = get('site-head');
+const onScroll = () => head.classList.toggle('scrolled', scrollY > 40);
+addEventListener('scroll', onScroll, {passive: true});
+onScroll();
+
+renderProducts('all');
+renderCart();
+</script>
+</body>
+</html>
